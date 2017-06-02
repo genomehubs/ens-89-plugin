@@ -50,7 +50,7 @@ sub create {
     mkdir $path;
   }
   open O,">$path/all.xml";
-  printf O $template, 'All', 'All species', 'All species', $sd->ENSEMBL_STYLE->{'SITE_ICON'}, 'common', 'ensembl_all';
+  printf O $template, 'All', 'All species', 'All species', 'favicon.png', 'common', 'ensembl_all';
   close O;
   foreach( $sd->valid_species ) {
     my $sn = substr( $sd->get_config($_,'SPECIES_BIO_SHORT'),0,5);
