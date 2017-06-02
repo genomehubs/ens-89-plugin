@@ -17,7 +17,7 @@ limitations under the License.
 
 =cut
 
-package EnsEMBL::Ensembl::SiteDefs;
+package EnsEMBL::GenomeHubs::SiteDefs;
 use strict;
 
 sub update_conf {
