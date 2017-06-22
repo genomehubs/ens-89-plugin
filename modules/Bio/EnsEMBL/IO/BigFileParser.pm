@@ -184,7 +184,7 @@ sub open_file {
   Bio::DB::BigFile->set_udc_defaults;
 
   my $method = $self->type.'FileOpen';
-  $self->{cache}->{file_handle} ||= Bio::DB::BigFile->$method('http://download.lepbase.org/v4/trackhub/data/rnaseq/heliconius_melpomene_melpomene_hmel2/13F.bw');
+  $self->{cache}->{file_handle} ||= Bio::DB::BigFile->$method('http://ngs.sanger.ac.uk/production/parasites/wormbase/RNASeq_alignments/echinococcus_granulosus_prjeb121/ERS016464.bw');
   return $self->{cache}->{file_handle};
 }
 
