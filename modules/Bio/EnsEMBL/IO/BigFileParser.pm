@@ -184,7 +184,7 @@ sub open_file {
   Bio::DB::BigFile->set_udc_defaults;
 
   my $method = $self->type.'FileOpen';
-  $self->{cache}->{file_handle} ||= Bio::DB::BigFile->$method($self->url);
+  $self->{cache}->{file_handle} ||= Bio::DB::BigFile->$method('/conf/13F.bw');
   return $self->{cache}->{file_handle};
 }
 
