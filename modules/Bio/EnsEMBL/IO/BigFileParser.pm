@@ -25,17 +25,6 @@ BigFileParser - a parser for indexed files such as BigBed and BigWig
 
 package Bio::EnsEMBL::IO::BigFileParser;
 
-use strict;
-use warnings;
-
-use List::Util qw(max);
-use POSIX qw(floor ceil);
-
-use Bio::DB::BigFile;
-use Bio::DB::BigFile::Constants;
-use Bio::EnsEMBL::IO::Utils;
-
-use parent qw(Bio::EnsEMBL::IO::Parser);
 
 
 =head2 open_file
