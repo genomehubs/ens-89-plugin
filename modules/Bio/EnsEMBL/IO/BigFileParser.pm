@@ -182,9 +182,14 @@ sub open_file {
   my $self = shift;
 
   Bio::DB::BigFile->set_udc_defaults;
-
+  
   my $method = $self->type.'FileOpen';
-  $self->{cache}->{file_handle} ||= Bio::DB::BigFile->$method('http://download.lepbase.org/v4/trackhub/data/rnaseq/heliconius_melpomene_melpomene_hmel2/13F.bw');
+
+# GenomeHubs hack to get around problem opening files from URLs
+# assumes trackhub directory has been mounted directly
+  $self->{'url'} =~ s/^.+:\/\/.+trackhub/\/trackhub/;
+# End GenomeHubs hack
+  $self->{cache}->{file_handle} ||= Bio::DB::BigFile->$method($self->{'url'});
   return $self->{cache}->{file_handle};
 }
 
