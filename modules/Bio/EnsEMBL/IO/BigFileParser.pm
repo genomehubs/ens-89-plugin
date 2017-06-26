@@ -187,9 +187,10 @@ sub open_file {
 
 # GenomeHubs hack to get around problem opening files from URLs
 # assumes trackhub directory has been mounted directly
-  $self->{'url'} =~ s/^.+:\/\/.+trackhub/\/trackhub/;
+  my $location = $self->{'url'};
+  $location =~ s/^.+:\/\/.+trackhub/\/trackhub/;
+  $self->{cache}->{file_handle} ||= Bio::DB::BigFile->$method($location);
 # End GenomeHubs hack
-  $self->{cache}->{file_handle} ||= Bio::DB::BigFile->$method($self->{'url'});
   return $self->{cache}->{file_handle};
 }
 
